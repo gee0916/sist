@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="http://211.63.89.149/html_prj/common/css/main_v1_220901.css">
+<style type="text/css">
+span{font-size: 20px};
+.red{color: #FF0000}
+.blue{color: #0000FF}
+</style>
+<script type="text/javascript">
+var cnt=0;
+var flag=false;
+function test() {
+	cnt++;
+	var bg="red";
+	if(flag){
+		bg="blue";
+	}//end if
+	
+	var msg="<span class='"+bg+"'>"+cnt+"번 </span> <strong>test called!! </strong>";
+	if(cnt==50){
+		msg+="<br/><img src='../day0825/images/cimg.png'>";
+	}//end if
+	
+	document.getElementById("output").innerHTML=msg;
+	
+	if(cnt==50){
+		endCall();
+	}else{
+		setTimeout(test,500);
+	}//end else
+	
+	
+/* 	document.getElementById("output").innerHTML=
+		"<span class='"+bg+"'>"+cnt+"번 </span> <strong>test called!! </strong>";
+	flag=!flag; */
+	
+	flag=!flag;
+	//1초마다 test함수를 다시 호출(재귀호출)하고싶다
+/* 		setTimeout(test,1000); */
+	
+}//test
+function endCall(){
+	alert("그만!!!");
+}//endCall
+
+</script>
+</head>
+<body>
+<input type="button" value="클릭" class="inputBtn" onclick="test()"/>
+<div id="output"></div>
+</body>
+</html>

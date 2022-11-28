@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="http://211.63.89.149/html_prj/common/css/main_v1_220901.css">
+<style type="text/css">
+/* wrap */
+#wrap{
+	width: 220px;
+	 margin: 200px auto; 
+	 border: 1px solid #333; 
+	 padding-top: 5px; 
+	 padding-bottom: 5px
+}
+/* 2번 */
+#num2{
+	width: 100px; 
+	height: 100px; 
+	border-radius: 50px; 
+	margin: 0px auto;
+	 text-align: center;
+}
+#num2_1{
+	text-align: center;
+}
+/* 2번 */
+#num3{
+	width: 100px; 
+	height: 100px; 
+	margin: 0px auto; 
+	text-align: center;
+}
+#num3_1{
+	text-align: center;
+}
+</style>
+<script type="text/javascript">
+
+//1. 태어난 해를 prompt로 입력받아 나이를 구하여 console에 출력하는 코드 작성
+let age=prompt("태어난 해를 입력해주세요.(0제외)", "예) 2022");
+let date=new Date();
+
+if(isNaN(age) || age==null) {
+	console.log("나이를 다시 입력해주세요.")	
+}else{
+	console.log("현재 나이는: "+(date.getFullYear()-age+1)+"살 ");
+}
+
+document.write("<div id='wrap'>");
+//2. 성별을 prompt로 입력받아 아래의 도형에 색을 넣어 HTML <body>로 출력하세요
+// 		남자면 파란색을 출력, 여자면 빨간색을 출력 (문자열의 비교는 ==)
+let gender=prompt("성별을 입력해주세요.(여자, 남자 중에서)", "예) 여자");
+let color;
+
+if(gender=="여자" || gender=="남자"){
+	color="red";
+	if(gender=="남자"){
+		color="blue";
+	}//end if
+	document.write("<div id='num2' style='background-color: "+ color +";'> </div>");
+}else {
+	document.write("<div id='num2_1'>성별을 다시 입력해주세요.</div>")	
+}
+document.write("<hr>");
+
+//3. prmopt로 RGB를 입력받아 넓이는 100px, 높이 100px 크기를 가지는 div에
+//		입력받은 색을 바닥색으로 넣어 보여주세요
+let rgb=prompt("RGB값을 입력해주세요(#제외 6자리 숫자만)", "예) 000000");
+
+if(rgb!=null && rgb.length==6){
+	document.write("<div id='num3' style='background-color: #"+ rgb +";'> </div>")
+}else{
+	document.write("<div id='num3_1'>RGB값을 다시 입력해주세요.</div>")
+}
+
+document.write("</div>");
+</script>
+</head>
+<body>
+</body>
+</html>

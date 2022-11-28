@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>탭 사용</title>
+<link rel="stylesheet" type="text/css" href="http://211.63.89.149/html_prj/common/css/main_v1_220901.css">
+<style type="text/css">
+
+</style>
+<!-- jQuery google CDN -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script type="text/javascript">
+
+</script>
+ <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#tabs" ).tabs({
+      collapsible: true
+    });
+  } );
+  </script>
+</head>
+<body>
+<div id="tabs">
+  <ul>
+    <li><a href="#tabs-1">1조</a></li>
+    <li><a href="#tabs-2">2조</a></li>
+    <li><a href="#tabs-3">3조</a></li>
+  </ul>
+  <div id="tabs-1">
+    <p><strong>중고거래(애기당근)</strong></p>
+    <p> 사용자 ( 대고객서비스 )
+    -메인화면, 
+    -매물창(매물리스트, 매물검색), 거래창(매물 상세정보, 신고,댓글, 전화번호연동, 좋아요)
+    -로그인, 회원가입, 아이디,비번찾기, 
+    -마이페이지 (개인정보 수정, 판매내역, 구매내역, 댓글 관리, 차단)</p>
+  </div>
+  <div id="tabs-2">
+    <p><strong>공연예매</strong></p>
+	<p>-사용자
+		  메인 
+		  -로그인, 회원가입, 아이디,비번찾기, 
+		
+		  -마이페이지 (예매정보- 조회, 취소, 내정보 수정)
+		  -공연정보 (공연일정-상세페이지, 예매정보, 전시일정, 좌석배치도)
+		  -고객 센터 (이용안내, 고객문의-고객문의 결과,예매안내 ,관람예절)</p>
+  </div>
+  <div id="tabs-3">
+    <p><strong>고양시 시티투어 홈페이지</strong></p>
+    <p> 사용자
+  -로그인, 회원가입, 아이디,비번찾기, 
+  -마이페이지 (투어예매정보- 조회, 취소, 내정보 수정, 작성한 후기 리스트, 수정,삭제)
+  -투어리스트 검색, (관광지보기)
+  -투어예약
+  -후기 ( 리스트, 상세조회)</p>
+  </div>
+</div>
+
+</body>
+</html>

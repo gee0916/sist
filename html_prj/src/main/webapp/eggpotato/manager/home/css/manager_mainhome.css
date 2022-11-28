@@ -1,0 +1,10 @@
+@charset "UTF-8";
+
+/* 컨테이너 */
+.main{
+	display:bloxk;
+	margin:0px auto;
+	width:1280px;
+	margin-top:50px;
+	margin-bottom: 50px;
+}

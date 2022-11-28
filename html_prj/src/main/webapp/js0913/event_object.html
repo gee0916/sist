@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="http://211.63.89.149/html_prj/common/css/main_v1_220901.css">
+<style type="text/css">
+
+div{ width: 800px; height: 200px; border:1px solid #333; margin-top: 10px; 
+		overflow: auto}
+</style>
+<script type="text/javascript">
+//이벤트 등록
+window.onload=function(){
+	//keydown은 키코드 값은 얻어지나 현재 입력 값은 얻어지지 않는다.
+	document.getElementById("text").addEventListener("keydown",testEvt);
+	//keyup 키코드 값과 현재 입력값이 모두 얻어진다
+	document.getElementById("text2").addEventListener("keyup",testEvt2);
+	document.getElementById("intro").addEventListener("keyup",testEvt3);
+}//function
+
+var msg="";
+function testEvt( evt ){
+	//.addEventListener함수에서 발생된 evt는 발생된 이벤트 객체 입력된다.
+	//alert("asdhfjkdshf"+ evt )
+	
+	//1.눌린키의 키 값을 얻기
+	//alert( evt.keyCode+" / "+ event.which )
+	msg+="키 다운: 코드 값: "+evt.which+", 입력 값: "+document.frm.name.value+"<br>";
+	
+	//2. output div에 설정
+	document.getElementById("output").innerHTML=msg;
+}//testEvt
+
+function testEvt2( evt ){
+	
+	msg+="키업: 코드 값: "+evt.which+", 입력 값: "+document.frm.name2.value+"<br>";
+	
+	//2. output div에 설정
+	document.getElementById("output").innerHTML=msg;
+}//testEvt2
+
+function testEvt3( evt ){
+	
+	var obj=document.frm;
+	var totalLeng= 100 - obj.intro.value.length;
+	
+	if(totalLeng<0) {
+		alert("입력 글자수를 초과 하였습니다.");
+		//obj.intro.value=obj.intro.value.substring(0,100);
+		return;
+	}//end if
+	document.getElementById("leng").innerHTML=totalLeng;
+	
+}//testEvt3
+
+</script>
+</head>
+<body>
+<form name="frm" ><!-- 이유?  back-end로 값을 전송하기 위해  -->
+<strong>키보드 이벤트 처리</strong>
+<br>
+<!-- 키보드 입력이 가능한 HTML Form Control만 가능 -->
+<input type="text" name="name" class="inputBox" style="height: 35px; width: 250px"
+placeholder="키 다운" id="text"/>
+<br>
+<input type="text" name="name2" class="inputBox" style="height: 35px; width: 250px"
+placeholder="키 업" id="text2"/>
+<br/>
+<div id="output"></div>
+
+<label>자기소개</label>
+<textarea name="intro" class ="inputbox" style="height: 200px; width: 250px" id="intro"
+maxlength="100"></textarea>
+<br>
+500자 까지 입력가능<span id="leng" style="font-weight: bold">100</span>자 남음
+</form>
+</body>

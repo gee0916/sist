@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="http://211.63.89.130/html_prj/common/css/main_v1_220901.css"/>
+<style type="text/css">
+
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	$("#oddBtn").click(function(){
+		$("li:odd").css("background-color", "#fff000");	
+		$("li:even").css("background-color", "#ffffff");	
+	})	
+	$("#evenBtn").click(function(){
+		$("li:odd").css("background-color", "#ffffff");	
+		$("li:even").css("background-color", "#fff000");	
+	})	
+})
+</script>
+</head>
+<body>
+<ol>
+<li>Java SE</li>
+<li>Oracle DBMS</li>
+<li>JDBC</li>
+<li>HTML</li>
+<li>CSS</li>
+<li>JavaScript</li>
+</ol>
+<input type="button" value="홀수" class="inputBtn" id="oddBtn"/>
+<input type="button" value="짝수" class="inputBtn" id="evenBtn"/>
+</body>
+</html>

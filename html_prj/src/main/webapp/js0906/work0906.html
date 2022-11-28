@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="http://211.63.89.149/html_prj/common/css/main_v1_220901.css">
+<style type="text/css">
+
+</style>
+<script type="text/javascript">
+
+let nameArr=new Array;
+let msgName;
+
+function inputName() {
+	msgName=prompt("이름을 입력해주세요");
+	nameArr[nameArr.length]=msgName;
+}//inputName
+
+function nameData() {
+	
+	document.write("<table border='1'>");
+	for(var i=0; i<nameArr.length; i++){
+		document.write("<tr>");
+		document.write("<td>"+nameArr[i]+"</td><br>");
+		document.write("</tr>");
+	}//end for
+	document.write("</table>");
+	
+}//nameData
+
+</script>
+</head>
+<body>
+<input type="button" value="이름입력" class="inputBtn" onclick="inputName()"/>
+<input type="button" value="이름출력" class="inputBtn" onclick="nameData()"/>
+
+</body>
+</html>

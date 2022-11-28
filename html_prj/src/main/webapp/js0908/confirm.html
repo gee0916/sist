@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="http://211.63.89.149/html_prj/common/css/main_v1_220901.css">
+<style type="text/css">
+
+</style>
+<script type="text/javascript">
+
+function del() {
+	
+	var flag=confirm("정말 삭제하시겠습니까?")
+	if(flag){
+		alert("삭제되었습니다");
+	}//end if
+	
+}//del
+
+function move(){
+	
+	var obj=document.frm;
+	
+	if(obj.url.selectedInedx!=0){
+		if(confirm(obj.url.value+"정말 이동하시겠습니까?")) {
+			location.href="http://"+obj.url.value;
+		}
+	}//end if
+	
+}//move
+
+</script>
+</head>
+<body>
+
+<a href="#void" onclick="del()"><img src="images/delete_btn.png" width="30" title="삭제"></a>
+<a href="javascript:del()"><img src="images/delete_btn.png" width="30" title="삭제"></a>
+
+<form name="frm">
+<label>이동할 site선택</label>
+<select name="url">
+	<option>--선택--</option>
+	<option value="daum.net">다음</option>
+	<option value="naver.com">네이버</option>
+	<option value="google.com">구글</option>
+	<option value="java.sun.com">자바</option>
+</select>
+<input type="button" value="이동" class="inputBtn" id="moveBtn" onclick="move()">
+
+</form>
+
+</body>
+</html>

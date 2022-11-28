@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>work0829</title>
+</head>
+<body>
+<br>
+<table border="1" cellspacing="0" width="350" height="100" align="center" bgcolor="#CCCCCC">
+<tr height="50"  align="center">
+	<td width="200"><input type="text" style="width:180px; height:30px; font-size:12pt" placeholder="아이디" autofocus="autofocus">
+	</td>
+		<td rowspan="2">
+			<input type="button" value="로그인" style="width:100px; height:30px; font-size:12pt"><br>
+			<input type="checkbox"> 아이디저장
+		</td> 
+</tr>
+<tr height="50" align="center">
+	<td width="200"><input type="password" style="width:180px; height:30px; font-size:12pt" placeholder="비밀번호" autofocus="autofocus"></td>
+</tr>
+</table>
+<br>
+<hr>
+<table border="0" width="1000" height="550" align="center">
+<form autocomplete="off">
+<tbody>
+<tr>
+	<td>
+		<table border="1" cellspacing="0" width="1000" height="500" align="center">
+			<tr>
+				<th width="100" align="left" bgcolor="#CCCCCC">
+					<label><font color="#FF0000"><sup>*</sup></font>아이디</label>
+				</th>
+				<td>
+					&ensp;<input type="text" name="ID" style="height:20px" autofocus="autofocus" required="required"/>
+					<input type="button" value=" ID 중복확인 "/>
+				</td>
+			</tr>
+			<tr>
+				<th align="left" bgcolor="#CCCCCC">
+					<label><font color="#FF0000"><sup>*</sup></font>비밀번호</label>
+				</th>
+				<td>
+					&ensp;<input type="password" name="pass" style="height:20px" maxlength="12" autofocus="autofocus" required="required"/>
+					&emsp;&ensp;<label>비밀번호 확인</label>
+					&ensp;<input type="password" name="passCheck" style="height:20px" maxlength="12" autofocus="autofocus" required="required"/>
+					&ensp;<sup>*</sup><small>8~12자의 영문,숫자,특수문자 3가지를 조합하여 입력</small>
+				</td>
+			</tr>
+			<tr>
+				<th align="left" bgcolor="#CCCCCC">
+					<label><font color="#FF0000"><sup>*</sup></font>이름</label>
+				</th>
+				<td>
+					&ensp;<input type="text" name="name" style="height:20px" autofocus="autofocus" required="required"/>
+				</td>
+			</tr>
+			<tr>
+				<th align="left" bgcolor="#CCCCCC">
+					<label><font color="#FF0000"><sup>*</sup></font>생일</label>
+				</th>
+				<td>
+					&ensp;<input type="date" name="birth" style="height:20px" required="required"/>
+				</td>
+			</tr>
+			<tr>
+				<th align="left" bgcolor="#CCCCCC">
+					<label>&ensp;연락처</label></th>
+				<td>
+					&ensp;<input type="tel" name="tell" style="height:20px">
+				</td>
+			</tr>
+			<tr>
+				<th align="left" bgcolor="#CCCCCC">
+					<label><font color="#FF0000"><sup>*</sup></font>휴대폰</label>
+				</th>
+				<td>
+					&ensp;<input type="tel" name="phone" style="height:20px" required="required"/>
+					&ensp;<input type="checkbox" name="sms"/> 수신
+				</td>
+			</tr>
+			<tr>
+				<th align="left" bgcolor="#CCCCCC">
+					<label><font color="#FF0000"><sup>*</sup></font>이메일</label>
+				</th>
+				<td>
+					&ensp;<input type="text" name="email" style="height:20px" required="required"/> @ 
+					<input type="text" name="domail" list="emailDomain" style="height:20px; font-size:12pt" placeholder="선택해주세요" required="required"/>
+					<datalist id="emailDomain">
+					<option value="google.com">google.com</option>
+					<option value="daum.net">daum.net</option>
+					<option value="nate.com">nate.com</option>
+					<option value="naver.com">naver.com</option>
+					<option value="hotmail.com">hotmail.com</option>
+					<option value="직접입력">직접입력</option>
+					</datalist>
+					&ensp;<input type="checkbox" name="sms"> 수신
+				</td>
+			</tr>
+			<tr>
+				<th align="left" bgcolor="#CCCCCC">
+					<label><font color="#FF0000"><sup>*</sup></font>성별</label>
+				</th>
+				<td>
+					&ensp;<input type="radio" name="gender" value="남자" required="required"/>남자
+					&ensp;<input type="radio" name="gender" value="여자" required="required"/>여자
+				</td>
+			</tr>
+			<tr>
+				<th align="left" bgcolor="#CCCCCC">
+					<label>&ensp;소재지</label>
+				</th>
+				<td>
+					&ensp;<input type="text" name="loc" list="location" style="width:120px; height:20px; font-size:12pt" placeholder="선택해주세요" required="required"/>
+					<datalist id="location">
+					<option value="서울">서울</option>
+					<option value="경기">경기</option>
+					<option value="강원">강원</option>
+					<option value="충청도">충청도</option>
+					<option value="경상도">경상도</option>
+					<option value="전라도">전라도</option>
+					<option value="제주도">제주도</option>
+					</datalist>
+				</td>
+			</tr>
+			<tr>
+				<th align="left" bgcolor="#CCCCCC">
+					<label><font color="#FF0000"><sup>*</sup></font>우편번호</label>
+				</th>
+				<td>
+					&ensp;<input type="text" name="zipcode" style="height:20px" autofocus="autofocus" required="required"/>
+					<input type="button" value=" 우편번호 검색 ">
+				</td>
+			</tr>
+			<tr>
+				<th align="left" bgcolor="#CCCCCC">
+					<label><font color="#FF0000"><sup>*</sup></font>주소</label>
+				</th>
+				<td>
+					&ensp;<input type="text" name="address" style="width:400px; height:20px" autofocus="autofocus" required="required" required="required"/> <br>
+					&ensp;<input type="text" name="address" style="width:400px; height:20px" autofocus="autofocus" required="required" required="required"/>
+				</td>
+			</tr>
+		</table>
+	<td>
+</tr>
+</tbody>
+<tfoot>
+<tr>
+	<td align="center">
+		<input type="submit" value="확인" style="width:100px; height:30px; background-color:#003366; color:#FFFFFF"/>
+		<input type="reset" value="취소" style="width:100px; height:30px; background-color:#333333; color:#FFFFFF"/>
+	</td>
+</tr>
+</tfoot>
+</form>
+</table>
+</body>
+</html>

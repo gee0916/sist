@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>글자정렬</title>
+<style type="text/css">
+/* 글자정렬:
+	-수평정렬: text-align: letf | center | right
+	-수직정렬: vertical-aling: top | middle | buttom
+	 */
+/* div는 들어가는 데이터의 높이가 행의 높이가 되므로 수직정렬이 되지 않는다 */
+#align1{background-color: #E7FFE7; width: 400px; height: 200px;
+	text-align: right; vertical-align: bottom;}
+
+/* td는 들어가는 데이터에 상관없이 설정하는 크기로 넓이와 높이가 설정된다 */
+.tdAlign{border: 1px solid #000000; width:250px; height:150px;
+		text-align: right; vertical-align: bottom;} 
+		
+
+#inputAlign { width:200px; height:150px; text-align: center; vertical-align: bottom;}
+</style>
+</head>
+<body>
+<div id="align1">test</div>
+<table>
+<tr>
+	<td class="tdAlign">정렬연습</td>
+</tr>
+</table>
+<br>
+<input type="text" id="inputAlign" value="테스트">
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="http://211.63.89.149/html_prj/common/css/main_v1_220901.css">
+<style type="text/css">
+
+</style>
+<script type="text/javascript">
+window.onload=function() {
+	document.getElementById("btn").addEventListener("click",moveSite);
+	document.getElementById("btn1").addEventListener("click",moveSite1);
+}//function
+
+function moveSite(){
+	//web browser에 history가 남아 뒤로, 앞으로 가기가 가능
+	location.href="http://daum.net";
+}//moveSite
+
+function moveSite1(){
+	//web browser에 history가 치환되어 뒤로, 앞으로 가기가 불가능
+	location.replace("http://daum.net");
+}//moveSite1
+
+</script>
+</head>
+<body>
+<input type="button" value="다음-href" class="inputBtn" id="btn">
+<input type="button" value="다음-replace" class="inputBtn" id="btn1">
+</body>
+</html>

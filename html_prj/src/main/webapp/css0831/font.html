@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CSS의 글꼴관련 속성</title>
+<!-- embed방식으로 css정의 -->
+<style type="text/css">
+/* id selector {#아이디명{속성:값;,,,}}
+글꼴 속성: font-family: 단일값 또는 복합값
+값이 공백을 가지면 "로 묶어서 사용
+ */
+ /* 단일값 */
+#font1{font-family: 궁서체;}
+/* 복합값: 접속자에 해당 글골의 설치여부로 L -> R 글꼴이 있다면 적용된다*/
+#font2{font-family: "맑은 고딕", 궁서체, sans-serif;}
+/* 진하게: font=weight: normal | bold */
+.fw1{font-weight:normal;}
+.fw2{font-weight:bold;}
+/* 이탤릭: font-style:normal |italic */
+.fs1{font-style:normal;}
+.fs2{font-style:italic;}
+/* tag selecor를 사용하여 이탤릭테로 보여지는 태그를 일반글자로 보여지도록 설정*/
+i,address{font-style: normal;}
+th{font-weight: normal;}
+
+/* 글자색 (전경색, forground color)
+	color: 색 
+*/
+.col1{color: aqua;} /* color의 속성값은 대소문자를 가리지 않는다 */
+.col2{color: #FF9999;} /* color의 속성값은 대소문자를 가리지 않는다 */
+/* 글자 효과: text-decoration: none | underline | underline | line-through | overline*/
+u,a{text-decoration: none;}
+.td{text-decoration: underline;}
+.td2{text-decoration:line-through;}
+.td3{text-decoration: overline;}
+
+/* 글자크기변경: font-size: 수치px*/
+.fontsize1{font-size: 20px;}
+.fontsize2{font-size: 12px;}
+</style>
+</head>
+<body>
+일반글자
+<div id="font1">오늘은 8월의 마지막날 수요일 입니다</div>
+<p id="font2">어제는 알약테러의 날이었습니다.</p>
+<div>
+<span class="fw1">일반글자</span>
+<span class="fw2">진하게</span>
+</div>
+<div>
+<span class="fs1">일반글자</span>
+<span class="fs2">이탤릭체</span>
+<i>이탤릭체</i>
+<address>우리집 주소!</address>
+</div>
+<table border="1">
+<tr>
+	<th width="80">번호</th>
+	<th width="120">이름</th>
+	<th width="300">주소</th>
+</tr>
+</table>
+<div>
+<span class="col1">단어로 색 설정한 글자</span>
+<span class="col2">REB칼라로 색 설정한 글자</span>
+</div>
+<div>
+<u>u태그</u>
+<a href="#void">링크</a>
+<span class="td">밑줄</span>
+<span class="td2">취소선</span>
+<span class="td3">윗줄</span>
+</div>
+<div>
+일반글자
+<span class="fontsize1">큰글자</span>
+<span class="fontsize2">작은글자</span>
+</div>
+</body>
+</html>

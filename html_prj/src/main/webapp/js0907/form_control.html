@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="http://211.63.89.149/html_prj/common/css/main_v1_220901.css">
+<style type="text/css">
+
+</style>
+<script type="text/javascript">
+function getValue(){
+	//name속성이 유일한 Form Control의 값 얻기
+	//1. form 태그를 변수 저장
+	var obj=document.frm;
+	
+	var msg="";
+	//2. form 태그의 자식 control에 접근하여 값 얻기
+	var text=obj.text.value; ////<input type="text"
+	msg="text: "+text+"<br>"; 
+	
+	msg+="password: "+obj.pass.value+"<br>"; //<input type="password"
+	msg+="hidden: "+obj.hid.value+"<br>"; //<input type="hidden"
+	//checkbox는 value를 사용하면 check여부에 상관없이 값을 얻을 수 있따
+	msg+="checkbox값: "+obj.cbFlag.value+"<br>"; //<input type="checkbox"
+	//radio는 value를 사용하면 check여부에 상관없이 값을 얻을 수 있따
+	msg+="radio값: "+obj.rad.value+"<br>"; //<input type="radio"
+	
+	//checkbox나 radio의 확인 상태는 checked를 사용
+	msg+="checkbox확인상태: "+obj.cbFlag.checked+"<br>"; //<input type="checkbox"
+	msg+="radio확인상태: "+obj.rad.checked+"<br>"; //<input type="radio"
+	
+	//file
+	msg+="file값: "+obj.file.value+"<br>"; //<input type="file"
+	
+	//select
+	msg+="select값: "+obj.sel.value+"<br>"; //<input type="sel"
+	
+	//textarea
+	msg+="textarea값: "+obj.ta.value+"<br>"; //<input type="textarea"
+	
+	//출력
+	document.getElementById("output").innerHTML=msg;
+	
+	
+}//getValue
+
+function getValue2(){
+	
+	//1. form 저장
+	var obj=document.frm;
+	//2. 값을 가져와서
+	var textarea=obj.ta.value;
+	//3. div설정
+	var div=document.getElementById("output2").innerHTML=textarea.replaceAll("\n","<br>");
+	
+}//getValue2
+
+function getValue3(){
+	
+	//1. form 저장
+	var obj=document.frm;
+	//2. 값을 가져와서
+	var check=obj.cbFlag;
+	
+	//3. div설정
+	
+	if(check.checked){
+		var div=document.getElementById("output2").innerHTML=check.value;
+	}//end if
+	
+}//getValue3
+
+function getValue4(){
+	
+	//1. form 저장
+	var obj=document.frm;
+	//2. 값을 가져와서
+	var rad=obj.rad;
+	//3. div설정
+	
+	if(rad.checked){
+		var div=document.getElementById("output2").innerHTML=
+			obj.text.value+"<br>"+obj.pass.value;
+	}//end if
+	
+}//getValue4
+
+function getValue5(){
+	
+	//1. form 저장
+	var obj=document.frm;
+	//2. 값을 가져와서
+	var select=obj.sel;
+	//3. div설정
+	
+	if(select.value=="select값3"){
+		var div=document.getElementById("output2").innerHTML=
+			obj.hid.value+"/"+obj.ta.value;
+	}//end if
+	
+}//getValue5
+
+function chglmg() {
+	var obj=document.frm;
+	//<img> 태그는 value로 값을 얻을 수 없다
+	/* alert(obj.img.src);	 */
+	if(obj.text.value==""){
+	alert("text에 이미지상의 인물명을 입력하세요")
+	return;		
+	}
+	if(obj.text.value=="차승주"){
+		obj.img.src="../common/images/pass.png";
+	}else{
+		alert("잘못된 인물명입니다.")
+		obj.text.value=="";
+	}
+}
+</script>
+</head>
+<body>
+<!-- name 속성이 "유일한" HTML Form Control의 값 얻기 -->
+<div>
+<strong>name속성이 유일한 Form Control(document.폼이름.control명.value)</strong><br>
+<form name="frm">
+<label>text</label>
+<input type="text" name="text" class="inputBox"/><br>
+
+<label>password</label>
+<input type="password" name="pass" class="inputBox"/><br>
+
+<label>hidden</label>
+<input type="hidden" name="hid" value="hidden값"/><br>
+
+<label>checkbox</label>
+<input type="checkbox" name="cbFlag" class="checkbox값"/>체크<br>
+
+<label>radio</label>
+<input type="radio" name="rad" value="radio값"/>라디오<br>
+
+<label>file</label>
+<input type="file" name="file"/><br>
+
+<label>select</label>
+<select name="sel">
+<option value="select값1">값1</option>
+<option value="select값2">값2</option>
+<option value="select값3">값3</option>
+</select>
+<br>
+
+<label>textarea</label>
+<textarea rows="5" cols="40" name="ta"></textarea><br>
+<img src="http://localhost/html_prj/day0825/images/cimg.png" name="img">
+<br>
+
+
+<input type="button" value="값얻기" class="inputBtn" onclick="getValue()"/>
+<input type="button" value="ta값얻기" class="inputBtn" onclick="getValue2()"/>
+<input type="button" value="check값얻기" class="inputBtn" onclick="getValue3()"/>
+<input type="button" value="radio값얻기" class="inputBtn" onclick="getValue4()"/>
+<input type="button" value="select선택" class="inputBtn" onclick="getValue5()"/>
+<input type="button" value="이미지변경" class="inputBtn" onclick="chglmg()"/>
+
+</form>
+<div id="output"></div>
+<div id="output2" style="position: absolute; top: 100px; left: 500px; 
+		border: 1px solid #333; width: 400px; height: 200px"></div>
+</div>
+</body>
+</html>

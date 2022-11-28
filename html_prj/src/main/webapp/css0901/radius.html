@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>둥근 모서리 만들기</title>
+<style type="text/css">
+/* 모든 모서리를 동일하게 둥글게 만들기
+	border-radius: 값 
+	특정 모서리만 다르게 만들기
+	border-radius: 좌상단값 우상단값 우하단값 좌하단값;
+*/
+#radius1{width: 250px; height: 190px; border: 1px solid #333;
+		border-radius: 100px; padding-left: 50px; padding-top: 10px}
+#radius2{width: 250px; height: 190px; border: 1px solid #333;
+		border-radius: 10px 20px 30px 50px;}
+table{border: ipx solid #333}
+td{width:  100px; height: 100px; border: 1px solid #333;
+	text-align: center; font-size: 25px; font-weight: bold;
+	border-radius: 50px; box-shadow: 10px 5px 10px #000000}
+td:hover { background-color: #dfdfdf;
+}	
+</style>
+</head>
+<body>
+<div id="radius1">오늘은 목요일</div>
+<div id="radius2">오늘은 목요일</div>
+<table>
+<tr>
+	<td>1</td><td>2</td><td>3</td>
+</tr>
+<tr>
+	<td>4</td><td>5</td><td>6</td>
+</tr>
+<tr>
+	<td>7</td><td>8</td><td>9</td>
+</tr>
+</table>
+<hr>
+<img src="http://localhost/html_prj/day0825/images/cimg.png" 
+	style="border-radius: 50px"/>
+<input type="text" style="width: 300px; height: 60px; border: 1px solid #333; font-size:20px; border-radius:20px; padding-left: 7px"/>
+</body>
+</html>
