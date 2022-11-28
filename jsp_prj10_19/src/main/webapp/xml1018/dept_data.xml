@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- dept테이블에 부서정보를 저장하기 위한 XML -->
+<depts>
+<dept>
+<deptno>10</deptno>
+<dname>개발부</dname>
+<loc>서울</loc>
+</dept>
+<dept>
+<deptno>20</deptno>
+<dname>영업부</dname>
+<loc>대전</loc>
+</dept>
+<dept><!-- 정의되는 태그는 위에 선언된 태그와 관련이 없다 -->
+<deptno>30</deptno>
+<dname>QA</dname>
+<loc>서울</loc>
+</dept>
+<deptinfo>
+<dept_loc>서울</dept_loc>
+<dept_dname>QA</dept_dname>
+<dept_deptno>30</dept_deptno>
+</deptinfo>
+</depts>
+
