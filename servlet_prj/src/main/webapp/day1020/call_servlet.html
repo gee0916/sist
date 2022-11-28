@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="http://211.63.89.149/servlet_prj/common/css/main_v1_220901.css">
+<style type="text/css">
+
+</style>
+<!-- jQuery google CDN -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script type="text/javascript">
+function useSubmit(){
+	//submit으로 요청하면 <form>에 들어있는 HTML Form Control들의 값이 back-end로 전달
+	document.frm.submit();
+}
+function useLocation(){
+	//location으로 요청하면 <form>에 들어있는 HTML Form Control들의 값이 back-end로
+	//전달되지 않는다.
+	location.href="http://localhost/servlet_prj/hello_servlet";
+}
+</script>
+</head>
+<body>
+<div>
+HTML( JSP )에서 Servlet 호출.
+</div>
+<div>
+Serlvet에서 doGet method만 정의했기 때문에 get방식으로만 호출이된다. <br/>
+&lt;url-pattern&gt; 에 설정된 이름을 사용.<br/>
+<a href="../hello_servlet">호출</a><br/>
+<a href="http://localhost/servlet_prj/hello_servlet">호출</a><br/>
+<form action="http://localhost/servlet_prj/hello_servlet" method="get" name="frm">
+<input type="submit" value="호출" class="inputBtn"/>
+<input type="button" value="JavaScript에서 submit" class="inputBtn" onclick="useSubmit()"/>
+<input type="button" value="JavaScript에서 location" class="inputBtn" onclick="useLocation()"/>
+</form>
+<form action="http://localhost/servlet_prj/hello_servlet" method="post" >
+<input type="submit" value="호출" class="inputBtn"/>
+</form>
+
+<form action="http://localhost/servlet_prj/hello_servlet" method="post" >
+<!-- servlet에서 doGet method만 존재하는 경우 post방식의 요청은 할 수 없다. 
+error : 405  -->
+<input type="submit" value="POST요청 호출" class="inputBtn"/>
+</form>
+
+</div>
+
+</body>
+</html>
+</html>
